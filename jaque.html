@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chic Boutique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #fff0f5; color: #333; }
+
+    /* HEADER */
+    header {
+      background: #ff69b4;
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 2em; font-weight: 700; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    /* HERO SECTION */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1618354692145-3a6d83f896fd?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,105,180,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 { font-size: 3em; margin-bottom: 20px; }
+    .hero button {
+      background: #fff;
+      color: #ff1493;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+    .hero button:hover { background: #ff1493; color: white; }
+
+    /* PRODUCT SECTION */
+    .products {
+      padding: 60px 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .product-card:hover { transform: translateY(-10px); }
+    .product-card img { width: 100%; height: 300px; object-fit: cover; }
+    .product-info { padding: 20px; text-align: center; }
+    .product-info h3 { font-size: 1.2em; margin-bottom: 10px; }
+    .product-info p { color: #ff1493; font-weight: 600; margin-bottom: 15px; }
+    .product-info button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .product-info button:hover { background: #ff1493; }
+
+    /* CONTACT SECTION */
+    .contact {
+      background: #ff69b4;
+      color: white;
+      padding: 60px 50px;
+      text-align: center;
+    }
+    .contact h2 { margin-bottom: 20px; }
+    .contact input, .contact textarea {
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
+      width: 100%;
+      max-width: 500px;
+    }
+    .contact button {
+      background: white;
+      color: #ff1493;
+      border: none;
+      padding: 15px 30px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact button:hover { background: #ff1493; color: white; }
+
+    /* FOOTER */
+    footer {
+      background: #ff1493;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      header { flex-direction: column; text-align: center; }
+      nav a { margin: 10px 0; }
+      .hero h2 { font-size: 2.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Chic Boutique</h1>
+    <nav>
+      <a href="#products">Productos</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>¡Moda que inspira!</h2>
+      <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Ver Colección</button>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="products" id="products">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1593032465176-dc0b4b71214f?auto=format&fit=crop&w=800&q=80" alt="Vestido Rosa">
+      <div class="product-info">
+        <h3>Vestido Rosa</h3>
+        <p>$35.00</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1624956958465-2b0b0d69c2f2?auto=format&fit=crop&w=800&q=80" alt="Top Floral">
+      <div class="product-info">
+        <h3>Top Floral</h3>
+        <p>$20.00</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1618354692150-89a8b2c05fd3?auto=format&fit=crop&w=800&q=80" alt="Falda Larga">
+      <div class="product-info">
+        <h3>Falda Larga</h3>
+        <p>$28.00</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1618354692147-3c8f3f896fff?auto=format&fit=crop&w=800&q=80" alt="Blusa Casual">
+      <div class="product-info">
+        <h3>Blusa Casual</h3>
+        <p>$22.00</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contact">
+    <h2>Contacto</h2>
+    <p>Escríbenos para cualquier consulta o pedido</p>
+    <form>
+      <input type="text" placeholder="Nombre" required><br>
+      <input type="email" placeholder="Correo electrónico" required><br>
+      <textarea rows="5" placeholder="Mensaje" required></textarea><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Chic Boutique. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
